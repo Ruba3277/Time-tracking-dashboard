@@ -2,7 +2,7 @@ fetch('./data.json')
   .then(response => response.json())
   .then(data => {
     const activities = document.getElementById('activities');
-
+    activities.innerHTML = '';
     data.forEach(item => {
       const card = document.createElement('div');
 
