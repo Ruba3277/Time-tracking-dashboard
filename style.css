@@ -9,16 +9,16 @@
 
   /* Activity Colors */
     --color-work-bg: hsl(15, 100%, 70%);
-    --blue-300: hsl(195, 74%, 62%);
-    --pink-400: hsl(348, 100%, 68%);
-    --green-400: hsl(145, 58%, 55%);
-    --purple-700: hsl(264, 64%, 52%);
-    --yellow-300: hsl(43, 84%, 65%);
+    --color-bg-play: hsl(195, 74%, 62%);
+    --color-bg-study: hsl(348, 100%, 68%);
+    --color-bg-exercise: hsl(145, 58%, 55%);
+    --color-bg-social: hsl(264, 64%, 52%);
+    --color-bg-selfcare: hsl(43, 84%, 65%);
 
   /* Neutral */
     --color-bg: hsl(226, 43%, 10%);
-    --color-profile-card-bg: hsl(235, 46%, 20%);
-    --purple-500: hsl(235, 45%, 61%);
+    --color-activity-card-bg: hsl(235, 46%, 20%);
+    --color-activity-card-hover-bg: hsl(235, 45%, 61%);
     --color-profile-text: hsl(236, 100%, 87%);
     --color-profile-border:white;
     --font-rubik:'Rubik', sans-serif;
@@ -92,7 +92,7 @@ p{
     display: flex;
     justify-content: space-around;
     padding-block: 1rem;
-    
+    background-color: var(--color-activity-card-bg);
 }
 button{
     border: none;
@@ -106,6 +106,9 @@ button{
     transition: color 0.3s ease;
 }
 .time-options button:hover{color: var(--color-profile-border);}
+#weekly {
+    color: var(--color-profile-border);
+}
 .activity-card {
     background-color: var(--color-work-bg);
     border-radius: 15px;
@@ -113,11 +116,12 @@ button{
     overflow: hidden;
     background-image: url('./images/icon-work.svg');
     background-repeat: no-repeat;
-    background-position: right 20px top -10px;
+    background-position: right 9px top -2px;
+    background-size: 62px;
 }
 
 .activity-content {
-    background-color: var(--color-profile-card-bg);
+    background-color: var(--color-activity-card-bg);
     padding: 24px;
     border-radius: 15px;
     position: relative;
@@ -125,6 +129,7 @@ button{
     display: flex;
     flex-direction: column;
     gap: clamp(10px, 2.5vw, 18px);
+    
 }
 .activity-header {
     display: flex;
@@ -153,6 +158,36 @@ h2{    font-size: 15px;
     font-size: 12px;
 }
 
+.activity-card:nth-child(2) {
+    background-color: var(--color-bg-play);
+    background-image: url('./images/icon-play.svg');
+  
+}
+
+.activity-card:nth-child(3) {
+    background-color: var(--color-bg-study);
+    background-image: url('./images/icon-study.svg');
+}
+
+.activity-card:nth-child(4) {
+    background-color: var(--color-bg-exercise);
+    background-image: url('./images/icon-exercise.svg');
+}
+
+.activity-card:nth-child(5) {
+    background-color: var(--color-bg-social);
+    background-image: url('./images/icon-social.svg');
+}
+
+.activity-card:nth-child(6) {
+    background-color: var(--color-bg-selfcare);
+    background-image: url('./images/icon-self-care.svg');
+}
+
+.activity-content:hover{
+    background-color: var(--color-activity-card-hover-bg);
+    cursor: pointer;
+}
 
 
 
@@ -164,11 +199,7 @@ h2{    font-size: 15px;
 
 
 
-
-
-
-
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .dashboard {
         grid-template-columns: 200px 1fr;
         align-items: stretch;
@@ -178,7 +209,10 @@ h2{    font-size: 15px;
     }
     .activity-card{    
         min-height: 180px;
-        position: relative;}
+        position: relative;
+        background-position: right 9px top -8px;
+        background-size: 60px;
+    }
 
     .activities {
         display: grid;
