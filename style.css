@@ -103,11 +103,23 @@ button{
 }
 .time-options button{
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 5px 11px;
+    border-radius: 11px;
 }
 .time-options button:hover{color: var(--color-profile-border);}
-#weekly {
+.time-options button.active {
     color: var(--color-profile-border);
+    background-color: var(--color-activity-card-hover-bg);
+    padding: 5px 11px;
+    border-radius: 11px;
+
+}
+.active{
+    color: var(--color-profile-border);
+    background-color: var(--color-activity-card-hover-bg);
+    padding: 5px 11px;
+    border-radius: 11px;
 }
 .activity-card {
     background-color: var(--color-work-bg);
